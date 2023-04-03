@@ -23,9 +23,7 @@ const theme = createTheme({
 })
 const isValidIEEEFormat = (text: string): boolean => {
   // ここにIEEEのルールを正規表現で記述してください。
-  const ieeeRegex =
-    /\[(\d+)\]\s*(.*?),\s*(“.*?,”)\s*(.*?),\s*(vol\.\s*\d+,\s*no\.\s*\d+,\s*pp\.\s*\d+-\d+,\s*[A-Z][a-z]+\s*\d{4}\.?)\s*(\[Online\]\.?)/g
-
+  const ieeeRegex = /\[(\d+)\]\s.+,\s".+,"\s.+,\s\d{1,2}\s{1,4},\s[Online]/
   return ieeeRegex.test(text)
 }
 
